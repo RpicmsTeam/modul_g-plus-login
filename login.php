@@ -42,10 +42,8 @@
     			var el = document.getElementById(id);
     			if (el.getAttribute('class') == 'hide') {
      				el.setAttribute('style', 'display: block');
-    				document.getElementById('revokeButton').setAttribute('style', 'display: none');
     			} else {
       				el.setAttribute('style', 'display: none');
-    				document.getElementById('revokeButton').setAttribute('style', 'display: block');
     			}
   			}
   		</script>
@@ -86,7 +84,7 @@
       					// Führen Sie jetzt nach der Trennung des Nutzers eine Aktion durch.
       					// Die Reaktion ist immer undefiniert.
       					alert("ABGEMELDET!");
-      					document.getElementById('signinButton').setAttribute('style', 'display: block');
+      					document.getElementById('signin-button').setAttribute('style', 'display: block');
     					document.getElementById('revokeButton').setAttribute('style', 'display: none');
     					//document.getElementById(DisplayDiv).innerHTML = "";
     					//document.getElementById(DisplayDiv2).innerHTML = "";

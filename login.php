@@ -45,10 +45,10 @@
     			xmlHttp.open( "GET", theUrl, false );
     			xmlHttp.send( null );
     			xmlHttp.contentType("application/json");
-    			$('#DisplayDiv2').append(xmlHttp.responseText);
-    			$('#DisplayDiv2').append(xmlHttp.error);
-    			//return xmlHttp.responseText;
-    			return false;
+    			//$('#DisplayDiv2').append(xmlHttp.responseText);
+    			//$('#DisplayDiv2').append(xmlHttp.error);
+    			return xmlHttp.responseText;
+    			//return false;
 			}
 		</script>
 		<script type="text/javascript">

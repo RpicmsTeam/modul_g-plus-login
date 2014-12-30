@@ -31,6 +31,7 @@
 
     			if (obj['email']) {
       				email = 'Email: ' + obj['email'];
+      				document.getElementById('revokeButton').setAttribute('style', 'display: block');
     			}
 
 

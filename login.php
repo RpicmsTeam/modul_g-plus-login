@@ -63,15 +63,12 @@
     		</div>
   		</div>
 
-  		<div id="email" style="display: none"></div>
 		<div id="DisplayDiv"></div><br/>
     	<script type="text/javascript">
 			function loadQueryResults(email_ergebnis) {
     			$('#DisplayDiv').load('login_handle.php?email=' + email_ergebnis);
     			return false;
 			}
-		</script>
-		<script type="text/javascript">
 			function disconnectUser(access_token) {
   				var revokeUrl = 'https://accounts.google.com/o/oauth2/revoke?token=' +
       				access_token;
@@ -89,8 +86,6 @@
       					alert("ABGEMELDET!");
       					document.getElementById('signin-button').setAttribute('style', 'display: block');
     					document.getElementById('revokeButton').setAttribute('style', 'display: none');
-    					document.getElementById('email').setAttribute('style', 'display: none');
-    					document.getElementById('email').innerHTML = "";
     				},
     				error: function(e) {
       					// Handhaben Sie den Fehler.

@@ -1,4 +1,9 @@
 <?php
+	echo "ERFOLGREICH";
 	$email = $_GET['email'];
-	echo $email
+	if (!$email) {
+		echo "ERROR!";
+	}else{
+		echo $email;
+	}
 ?>

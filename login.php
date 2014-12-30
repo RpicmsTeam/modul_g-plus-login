@@ -58,7 +58,7 @@
   				$.ajax({
     				type: 'GET',
     				url: revokeUrl,
-    				async: false,
+    				async: true,
     				contentType: "application/json",
     				dataType: 'jsonp',
     				success: function(nullResponse) {

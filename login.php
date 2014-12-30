@@ -37,5 +37,34 @@
   				}
 			}
 		</script>
+		<script type="text/javascript">
+			function disconnectUser(access_token) {
+  				var revokeUrl = 'https://accounts.google.com/o/oauth2/revoke?token=' +
+      				access_token;
+
+  				// Führen Sie einen asynchrone GET-Anfrage durch.
+  				$.ajax({
+    				type: 'GET',
+    				url: revokeUrl,
+    				async: false,
+    				contentType: "application/json",
+    				dataType: 'jsonp',
+    				success: function(nullResponse) {
+      					// Führen Sie jetzt nach der Trennung des Nutzers eine Aktion durch.
+      					// Die Reaktion ist immer undefiniert.
+      					alert("ABGEMELDET!")
+    				},
+    				error: function(e) {
+      					// Handhaben Sie den Fehler.
+      					// console.log(e);
+      					// Wenn es nicht geklappt hat. könnten Sie Nutzer darauf hinweisen, wie die manuelle Trennung erfolgt.
+      					// https://plus.google.com/apps
+    				}
+  				});
+			}
+			// Sie könnten die Trennung über den Klick auf eine Schaltfläche auslösen.
+			$('#revokeButton').click(disconnectUser);
+		</script>
+		<button class="revokeButton" ></button>
     </body>
 </html>

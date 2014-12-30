@@ -29,10 +29,9 @@
     			var el = document.getElementById('email');
     			var email = '';
 				document.getElementById('revokeButton').setAttribute('style', 'display: block');
-				loadQueryResults(email);
     			if (obj['email']) {
       				email = 'Email: ' + obj['email'];
-      				document.getElementById('email').setAttribute('style', 'display: block');
+      				loadQueryResults(email);
     			}else{
     				alert("ERROR!")
     			}

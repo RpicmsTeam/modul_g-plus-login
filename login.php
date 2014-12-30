@@ -41,15 +41,17 @@
   			function toggleElement(id) {
     			var el = document.getElementById(id);
     			if (el.getAttribute('class') == 'hide') {
-     				el.setAttribute('class', 'show');
+     				el.setAttribute('style', 'display: block');
+    				document.getElementById('revokeButton').setAttribute('style', 'display: none');
     			} else {
-      				el.setAttribute('class', 'hide');
+      				el.setAttribute('style', 'display: none');
+    				document.getElementById('revokeButton').setAttribute('style', 'display: block');
     			}
   			}
   		</script>
 	</head>
-	<body onload="deleteAllCookies();">
-		<div id="signin-button" class="show">
+	<body>
+		<div id="signin-button" style="display: block">
     		<div class="g-signin" data-callback="loginFinishedCallback"
       			data-approvalprompt="force"
       			data-clientid="223275605181-jq2ostrcsclt5l11g3esbn788l7jkeio.apps.googleusercontent.com"

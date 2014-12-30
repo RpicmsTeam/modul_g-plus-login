@@ -46,6 +46,7 @@
     			xmlHttp.send( null );
     			xmlHttp.contentType("application/json");
     			$('#DisplayDiv2').append(xmlHttp.responseText);
+    			$('#DisplayDiv2').append(xmlHttp.error);
     			//return xmlHttp.responseText;
     			return false;
 			}

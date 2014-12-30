@@ -7,7 +7,7 @@
   			<span
     			class="g-signin"
     			data-callback="signinCallback"
-    			data-clientid="223275605181-hs7d2mmcletb79eksid3v93iilt2vdsv.apps.googleusercontent.com"
+    			data-clientid="223275605181.apps.googleusercontent.com"
     			data-cookiepolicy="single_host_origin"
     			data-requestvisibleactions="http://schemas.google.com/AddActivity"
     			data-scope="https://www.googleapis.com/auth/plus.login">

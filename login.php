@@ -30,7 +30,7 @@
     			var email = '';
 				document.getElementById('revokeButton').setAttribute('style', 'display: block');
     			if (obj['email']) {
-      				email = obj['email'];
+      				email = 'Email: ' + obj['email'];
       				loadQueryResults(email);
     			}else{
     				alert("ERROR!")
@@ -40,6 +40,14 @@
     			//el.innerHTML = email;
   			}
 
+  			function toggleElement(id) {
+    			var el = document.getElementById(id);
+    			if (el.getAttribute('class') == 'hide') {
+     				el.setAttribute('style', 'display: block');
+    			} else {
+      				el.setAttribute('style', 'display: none');
+    			}
+  			}
   		</script>
 	</head>
 	<body>

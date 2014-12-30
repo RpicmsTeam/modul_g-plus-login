@@ -28,11 +28,12 @@
   			function getEmailCallback(obj){
     			var el = document.getElementById('email');
     			var email = '';
-
+				document.getElementById('revokeButton').setAttribute('style', 'display: block');
     			if (obj['email']) {
       				email = 'Email: ' + obj['email'];
-      				document.getElementById('revokeButton').setAttribute('style', 'display: block');
       				document.getElementById('email').setAttribute('style', 'display: block');
+    			}else{
+    				alert("ERROR!")
     			}
 
 

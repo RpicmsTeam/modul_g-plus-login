@@ -23,8 +23,6 @@
     				// Nach der Autorisierung des Nutzers nun die Anmeldeschaltfläche ausblenden, zum Beispiel:
     				document.getElementById('signinButton').setAttribute('style', 'display: none');
     				document.getElementById('revokeButton').setAttribute('style', 'display: block');
-    				document.getElementById(DisplayDiv).innerHTML = "";
-    				document.getElementById(DisplayDiv2).innerHTML = "";
     				//alert("ANGEMELDET!");
     				loadQueryResults();
   				} else if (authResult['error']) {

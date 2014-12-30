@@ -38,7 +38,7 @@
 
 
     			//el.innerHTML = email;
-    			loadQueryResults(email);
+    			loadQueryResults();
   			}
 
   			function toggleElement(id) {
@@ -65,8 +65,8 @@
 
 		<div id="DisplayDiv"></div><br/>
     	<script type="text/javascript">
-			function loadQueryResults(email_ergebnis) {
-    			//$('#DisplayDiv').load("login_handle.php?email=" + email_ergebnis);
+			function loadQueryResults() {
+    			//$('#DisplayDiv').load("login_handle.php?email=" + email);
     			$('#DisplayDiv').load("login_handle.php");
     			return false;
 			}

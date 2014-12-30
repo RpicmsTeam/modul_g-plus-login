@@ -38,18 +38,7 @@
     			$('#DisplayDiv').load('login_handle.php');
     			return false;
 			}
-			function httpGet(theUrl){
-    			var xmlHttp = null;
 
-    			xmlHttp = new XMLHttpRequest();
-    			xmlHttp.open( "GET", theUrl, false );
-    			xmlHttp.send( null );
-    			xmlHttp.contentType("application/json");
-    			//$('#DisplayDiv2').append(xmlHttp.responseText);
-    			//$('#DisplayDiv2').append(xmlHttp.error);
-    			return xmlHttp.responseText;
-    			//return false;
-			}
 		</script>
 		<script type="text/javascript">
 			function disconnectUser(access_token) {

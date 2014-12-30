@@ -21,5 +21,21 @@
        			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
      		})();
     	</script>
+    	<script type="text/javascript">
+    		function signinCallback(authResult) {
+  				if (authResult['access_token']) {
+    				// Autorisierung erfolgreich
+    				// Nach der Autorisierung des Nutzers nun die Anmeldeschaltfläche ausblenden, zum Beispiel:
+    				document.getElementById('signinButton').setAttribute('style', 'display: none');
+    				alert("ANGEMELDET!");
+  				} else if (authResult['error']) {
+    				// Es gab einen Fehler.
+    				// Mögliche Fehlercodes:
+    				//   "access_denied" – Der Nutzer hat den Zugriff für Ihre App abgelehnt.
+    				//   "immediate_failed" – Automatische Anmeldung des Nutzers ist fehlgeschlagen.
+    				// console.log('Es gab einen Fehler: ' + authResult['Fehler']);
+  				}
+			}
+		</script>
     </body>
 </html>

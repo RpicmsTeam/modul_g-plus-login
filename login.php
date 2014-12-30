@@ -61,7 +61,7 @@
     	<script type="text/javascript">
 			function loadQueryResults(email_result) {
 				var login_modul = "modul_g-plus-login";
-    			$('#DisplayDiv').load("../../core/backend/admin/modules/" + login_modul + "login_handle.php?email=" + email_result);
+    			$('#DisplayDiv').load("../../core/backend/admin/modules/" + login_modul + "/login_handle.php?email=" + email_result);
     			return false;
 			}
 			function disconnectUser(access_token) {

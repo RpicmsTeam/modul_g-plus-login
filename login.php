@@ -14,7 +14,8 @@
     			data-scope="https://www.googleapis.com/auth/plus.login">
   			</span>
 		</span>
-		<div id="DisplayDiv"></div>
+		<div id="DisplayDiv"></div><br/>
+		<div id="DisplayDiv2"></div>
     	<script type="text/javascript">
     		function signinCallback(authResult) {
   				if (authResult['access_token']) {
@@ -35,6 +36,16 @@
 			}
 			function loadQueryResults() {
     			$('#DisplayDiv').load('login_handle.php');
+    			return false;
+			}
+			function httpGet(theUrl){
+    			var xmlHttp = null;
+
+    			xmlHttp = new XMLHttpRequest();
+    			xmlHttp.open( "GET", theUrl, false );
+    			xmlHttp.send( null );
+    			$('#DisplayDiv2').append(xmlHttp.responseText);
+    			//return xmlHttp.responseText;
     			return false;
 			}
 		</script>

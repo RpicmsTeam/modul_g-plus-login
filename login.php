@@ -34,7 +34,7 @@
   				}
 			}
 			function loadQueryResults() {
-    			$('.DisplayDiv').load('login_handle.php');
+    			$('#DisplayDiv').load('login_handle.php');
     			return false;
 			}
 		</script>

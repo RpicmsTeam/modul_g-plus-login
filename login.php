@@ -22,7 +22,8 @@
     				// Nach der Autorisierung des Nutzers nun die Anmeldeschaltfläche ausblenden, zum Beispiel:
     				document.getElementById('signinButton').setAttribute('style', 'display: none');
     				document.getElementById('revokeButton').setAttribute('style', 'display: block');
-    				alert("ANGEMELDET!");
+    				//alert("ANGEMELDET!");
+    				document.getElementById('output').setAttribute('style', 'display: block');
     				getOutput();
   				} else if (authResult['error']) {
     				// Es gab einen Fehler.
@@ -35,6 +36,7 @@
 			// handles the click event for link 1, sends the query
 			function getOutput() {
   				getRequest(
+  					alert("DEBUG!!");
       				'login_handle.php', // URL for the PHP file
        				drawOutput,  // handle successful request
        				drawError    // handle error
@@ -102,6 +104,7 @@
       					alert("ABGEMELDET!");
       					document.getElementById('signinButton').setAttribute('style', 'display: block');
     					document.getElementById('revokeButton').setAttribute('style', 'display: none');
+    					document.getElementById('none').setAttribute('style', 'display: block');
     				},
     				error: function(e) {
       					// Handhaben Sie den Fehler.
@@ -116,6 +119,7 @@
 			//$('.revokeButton').click(disconnectUser);
 		</script>
 		<button id="revokeButton" onclick="disconnectUser();" style="display: none">Abmelden</button>
+		<div id="output" style="display: none">waiting for action</div>
 		<script type="text/javascript">
       		(function() {
        			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;

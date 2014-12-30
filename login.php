@@ -11,7 +11,7 @@
     			data-clientid="223275605181-jq2ostrcsclt5l11g3esbn788l7jkeio.apps.googleusercontent.com"
     			data-cookiepolicy="single_host_origin"
     			data-requestvisibleactions="http://schemas.google.com/AddActivity"
-    			data-scope="https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login">
+    			data-scope="https://www.googleapis.com/auth/plus.login">
   			</span>
 		</span>
 		<div id="DisplayDiv"></div><br/>
@@ -30,7 +30,7 @@
     				// Mögliche Fehlercodes:
     				//   "access_denied" – Der Nutzer hat den Zugriff für Ihre App abgelehnt.
     				//   "immediate_failed" – Automatische Anmeldung des Nutzers ist fehlgeschlagen.
-    				 console.log('Es gab einen Fehler: ' + authResult['Fehler']);
+    				console.log('Es gab einen Fehler: ' + authResult['Fehler']);
     				//alert("error:" + authResult['Fehler'])
   				}
 			}
@@ -44,7 +44,7 @@
     			xmlHttp = new XMLHttpRequest();
     			xmlHttp.open( "GET", theUrl, false );
     			xmlHttp.send( null );
-    			xmlHttp.contentType("application/json")
+    			xmlHttp.contentType("application/json");
     			$('#DisplayDiv2').append(xmlHttp.responseText);
     			//return xmlHttp.responseText;
     			return false;

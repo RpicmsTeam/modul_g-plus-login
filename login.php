@@ -38,37 +38,6 @@
     			$('#DisplayDiv').load('login_handle.php');
     			return false;
 			}
-			/*function httpGet(theUrl){
-    			var xmlHttp = null;
-
-    			xmlHttp = new XMLHttpRequest();
-    			xmlHttp.open( "GET", theUrl, false );
-    			xmlHttp.send( null );
-    			$('#DisplayDiv2').append(xmlHttp.responseText);
-    			//return xmlHttp.responseText;
-    			return false;
-			}*/
-			function httpGet(theUrl){
-				$.ajax({
-    				type: 'GET',
-    				url: theUrl,
-    				async: false,
-    				contentType: "application/json",
-    				dataType: 'jsonp',
-    				success: function() {
-      					alert(data.join(' '));
-
-    				},
-    				error: function(e) {
-      					// Handhaben Sie den Fehler.
-      					// console.log(e);
-      					// Wenn es nicht geklappt hat. könnten Sie Nutzer darauf hinweisen, wie die manuelle Trennung erfolgt.
-      					// https://plus.google.com/apps
-      					alert("fehler");
-    				}
-  				});
-
-			}
 		</script>
 		<script type="text/javascript">
 			function disconnectUser(access_token) {

@@ -67,8 +67,8 @@
       					alert("ABGEMELDET!");
       					document.getElementById('signinButton').setAttribute('style', 'display: block');
     					document.getElementById('revokeButton').setAttribute('style', 'display: none');
-    					document.getElementById(DisplayDiv).innerHTML = "";
-    					document.getElementById(DisplayDiv2).innerHTML = "";
+    					//document.getElementById(DisplayDiv).innerHTML = "";
+    					//document.getElementById(DisplayDiv2).innerHTML = "";
     				},
     				error: function(e) {
       					// Handhaben Sie den Fehler.

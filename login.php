@@ -52,7 +52,7 @@
 		<div id="signin-button" class="show">
     		<div class="g-signin" data-callback="loginFinishedCallback"
       			data-approvalprompt="force"
-      			data-clientid="223275605181.apps.googleusercontent.com"
+      			data-clientid="223275605181-jq2ostrcsclt5l11g3esbn788l7jkeio.apps.googleusercontent.com"
       			data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email"
       			data-height="short"
       			data-cookiepolicy="single_host_origin"

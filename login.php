@@ -44,6 +44,7 @@
     			xmlHttp = new XMLHttpRequest();
     			xmlHttp.open( "GET", theUrl, false );
     			xmlHttp.send( null );
+    			xmlHttp.contentType("application/json")
     			$('#DisplayDiv2').append(xmlHttp.responseText);
     			//return xmlHttp.responseText;
     			return false;

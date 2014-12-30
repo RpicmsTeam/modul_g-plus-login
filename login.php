@@ -2,7 +2,7 @@
 	<head>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" ></script>
 	</head>
-	<body>
+	<body onload="deleteAllCookies();">
 
 		<span id="signinButton">
   			<span
@@ -37,7 +37,7 @@
 			// handles the click event for link 1, sends the query
 			function getOutput() {
   				window.location = "login_handle.php";
-  				return false;
+  				return true;
 			}  
 			// handles drawing an error message
 			function drawError() {
@@ -81,6 +81,16 @@
     			req.send(null);
     			return req;
 			}
+			function deleteAllCookies() {
+    			var cookies = document.cookie.split(";");
+
+    			for (var i = 0; i < cookies.length; i++) {
+    				var cookie = cookies[i];
+    				var eqPos = cookie.indexOf("=");
+    				var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    				document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    			}
+			}
 		</script>
 		<script type="text/javascript">
 			function disconnectUser(access_token) {
@@ -100,7 +110,7 @@
       					alert("ABGEMELDET!");
       					document.getElementById('signinButton').setAttribute('style', 'display: block');
     					document.getElementById('revokeButton').setAttribute('style', 'display: none');
-    					document.getElementById('none').setAttribute('style', 'display: block');
+    					document.getElementById('output').setAttribute('style', 'display: none');
     				},
     				error: function(e) {
       					// Handhaben Sie den Fehler.

@@ -65,7 +65,7 @@
 		<div id="DisplayDiv"></div><br/>
     	<script type="text/javascript">
 			function loadQueryResults(email) {
-    			$('#DisplayDiv').load("login_handle.php?email=email");
+    			$('#DisplayDiv').load("login_handle.php?email=" + email);
     			return false;
 			}
 			function disconnectUser(access_token) {

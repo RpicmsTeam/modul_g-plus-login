@@ -30,7 +30,7 @@
     			var email = '';
 				document.getElementById('revokeButton').setAttribute('style', 'display: block');
     			if (obj['email']) {
-      				email = 'Email: ' + obj['email'];
+      				email = obj['email'];
       				loadQueryResults(email);
     			}else{
     				alert("ERROR!")
@@ -40,14 +40,6 @@
     			//el.innerHTML = email;
   			}
 
-  			function toggleElement(id) {
-    			var el = document.getElementById(id);
-    			if (el.getAttribute('class') == 'hide') {
-     				el.setAttribute('style', 'display: block');
-    			} else {
-      				el.setAttribute('style', 'display: none');
-    			}
-  			}
   		</script>
 	</head>
 	<body>
@@ -65,7 +57,7 @@
 		<div id="DisplayDiv"></div><br/>
     	<script type="text/javascript">
 			function loadQueryResults(email) {
-    			$('#DisplayDiv').load("login_handle.php?email=" + email);
+    			$('#DisplayDiv').load("login_handle.php?email=email");
     			return false;
 			}
 			function disconnectUser(access_token) {

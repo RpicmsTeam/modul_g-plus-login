@@ -16,7 +16,6 @@
 		</span>
 
     	<script type="text/javascript">
-    	document.getElementById('revokeButton').setAttribute('style', 'display: none');
     		function signinCallback(authResult) {
   				if (authResult['access_token']) {
     				// Autorisierung erfolgreich
@@ -49,6 +48,8 @@
       					// Führen Sie jetzt nach der Trennung des Nutzers eine Aktion durch.
       					// Die Reaktion ist immer undefiniert.
       					alert("ABGEMELDET!");
+      					document.getElementById('signinButton').setAttribute('style', 'display: block');
+    					document.getElementById('revokeButton').setAttribute('style', 'display: none');
     				},
     				error: function(e) {
       					// Handhaben Sie den Fehler.
@@ -62,7 +63,7 @@
 			// Sie könnten die Trennung über den Klick auf eine Schaltfläche auslösen.
 			//$('.revokeButton').click(disconnectUser);
 		</script>
-		<button id="revokeButton" onclick="disconnectUser();">Abmelden</button>
+		<button id="revokeButton" onclick="disconnectUser();" style="display: none">Abmelden</button>
 		<script type="text/javascript">
       		(function() {
        			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;

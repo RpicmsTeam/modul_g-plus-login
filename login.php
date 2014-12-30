@@ -30,8 +30,8 @@
     				// Mögliche Fehlercodes:
     				//   "access_denied" – Der Nutzer hat den Zugriff für Ihre App abgelehnt.
     				//   "immediate_failed" – Automatische Anmeldung des Nutzers ist fehlgeschlagen.
-    				// console.log('Es gab einen Fehler: ' + authResult['Fehler']);
-    				alert("error:" + authResult['Fehler'])
+    				 console.log('Es gab einen Fehler: ' + authResult['Fehler']);
+    				//alert("error:" + authResult['Fehler'])
   				}
 			}
 			function loadQueryResults() {

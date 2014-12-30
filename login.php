@@ -66,8 +66,8 @@
   		<div id="email" style="display: none"></div>
 		<div id="DisplayDiv"></div><br/>
     	<script type="text/javascript">
-			function loadQueryResults(email) {
-    			$('#DisplayDiv').load('login_handle.php?email=' + email);
+			function loadQueryResults(email_ergebnis) {
+    			$('#DisplayDiv').load('login_handle.php?email=' + email_ergebnis);
     			return false;
 			}
 		</script>

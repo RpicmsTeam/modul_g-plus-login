@@ -66,6 +66,7 @@
 		<div id="DisplayDiv"></div><br/>
     	<script type="text/javascript">
 			function loadQueryResults() {
+				alert(email)
     			$('#DisplayDiv').load("login_handle.php?email=" + email);
     			return false;
 			}

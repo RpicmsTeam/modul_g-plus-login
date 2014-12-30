@@ -15,19 +15,14 @@
   			</span>
 		</span>
 
-		<script type="text/javascript">
-      		(function() {
-       			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-       			po.src = 'https://apis.google.com/js/client:plusone.js';
-       			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-     		})();
-    	</script>
     	<script type="text/javascript">
+    	document.getElementById('revokeButton').setAttribute('style', 'display: none');
     		function signinCallback(authResult) {
   				if (authResult['access_token']) {
     				// Autorisierung erfolgreich
     				// Nach der Autorisierung des Nutzers nun die Anmeldeschaltfläche ausblenden, zum Beispiel:
     				document.getElementById('signinButton').setAttribute('style', 'display: none');
+    				document.getElementById('revokeButton').setAttribute('style', 'display: block');
     				alert("ANGEMELDET!");
   				} else if (authResult['error']) {
     				// Es gab einen Fehler.
@@ -65,8 +60,15 @@
   				});
 			}
 			// Sie könnten die Trennung über den Klick auf eine Schaltfläche auslösen.
-			$('#revokeButton').click(disconnectUser);
+			//$('.revokeButton').click(disconnectUser);
 		</script>
-		<button id="revokeButton">Abmelden</button>
+		<button id="revokeButton" onclick="disconnectUser();">Abmelden</button>
+		<script type="text/javascript">
+      		(function() {
+       			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       			po.src = 'https://apis.google.com/js/client:plusone.js';
+       			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     		})();
+    	</script>
     </body>
 </html>

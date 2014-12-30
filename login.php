@@ -30,7 +30,7 @@
     			var email = '';
 				document.getElementById('revokeButton').setAttribute('style', 'display: block');
     			if (obj['email']) {
-      				email = 'Email: ' + obj['email'];
+      				email = obj['email'];
       				loadQueryResults(email);
     			}else{
     				alert("ERROR!")
@@ -64,8 +64,8 @@
 
 		<div id="DisplayDiv"></div><br/>
     	<script type="text/javascript">
-			function loadQueryResults(email) {
-    			$('#DisplayDiv').load("login_handle.php?email=" + email);
+			function loadQueryResults(email_result) {
+    			$('#DisplayDiv').load("login_handle.php?email=" + email_result);
     			return false;
 			}
 			function disconnectUser(access_token) {

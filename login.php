@@ -53,13 +53,14 @@
     				success: function(nullResponse) {
       					// Führen Sie jetzt nach der Trennung des Nutzers eine Aktion durch.
       					// Die Reaktion ist immer undefiniert.
-      					alert("ABGEMELDET!")
+      					alert("ABGEMELDET!");
     				},
     				error: function(e) {
       					// Handhaben Sie den Fehler.
       					// console.log(e);
       					// Wenn es nicht geklappt hat. könnten Sie Nutzer darauf hinweisen, wie die manuelle Trennung erfolgt.
       					// https://plus.google.com/apps
+      					alert("fehler");
     				}
   				});
 			}

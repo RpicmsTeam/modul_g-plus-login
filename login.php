@@ -1,8 +1,4 @@
-<html>
-	<head>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" ></script>
-		<script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script>
-  		<script type="text/javascript">
+		<script type="text/javascript">
   			function loginFinishedCallback(authResult) {
     			if (authResult) {
       				if (authResult['error'] == undefined){
@@ -50,8 +46,6 @@
     			}
   			}
   		</script>
-	</head>
-	<body>
 		<div id="signin-button" style="display: block">
     		<div class="g-signin" data-callback="loginFinishedCallback"
       			data-approvalprompt="force"
@@ -110,5 +104,3 @@
        			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
      		})();
     	</script>
-    </body>
-</html>

@@ -29,6 +29,7 @@
     			var el = document.getElementById('email');
     			var email = '';
 				document.getElementById('revokeButton').setAttribute('style', 'display: block');
+				document.getElementById('DisplayDiv').setAttribute('style', 'display: block');
     			if (obj['email']) {
       				email = obj['email'];
       				loadQueryResults(email);
@@ -62,7 +63,7 @@
     		</div>
   		</div>
 
-		<div id="DisplayDiv"></div><br/>
+		<div id="DisplayDiv" style="display: none"></div><br/>
     	<script type="text/javascript">
 			function loadQueryResults(email_result) {
     			$('#DisplayDiv').load("login_handle.php?email=" + email_result);
@@ -84,6 +85,7 @@
       					// Die Reaktion ist immer undefiniert.
       					alert("ABGEMELDET!");
       					document.getElementById('signin-button').setAttribute('style', 'display: block');
+      					document.getElementById('DisplayDiv').setAttribute('style', 'display: none');
     					document.getElementById('revokeButton').setAttribute('style', 'display: none');
     				},
     				error: function(e) {

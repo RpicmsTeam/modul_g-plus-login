@@ -31,16 +31,12 @@
     				//   "access_denied" – Der Nutzer hat den Zugriff für Ihre App abgelehnt.
     				//   "immediate_failed" – Automatische Anmeldung des Nutzers ist fehlgeschlagen.
     				// console.log('Es gab einen Fehler: ' + authResult['Fehler']);
+    				alert("error:" + authResult['Fehler'])
   				}
 			}
 			// handles the click event for link 1, sends the query
 			function getOutput() {
-  				getRequest(
-  					alert("DEBUG!!");
-      				'login_handle.php', // URL for the PHP file
-       				drawOutput,  // handle successful request
-       				drawError    // handle error
-  				);
+  				window.location = "login_handle.php";
   				return false;
 			}  
 			// handles drawing an error message

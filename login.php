@@ -38,6 +38,16 @@
     			$('#DisplayDiv').load('login_handle.php');
     			return false;
 			}
+			function httpGet(theUrl){
+    			var xmlHttp = null;
+
+    			xmlHttp = new XMLHttpRequest();
+    			xmlHttp.open( "GET", theUrl, false );
+    			xmlHttp.send( null );
+    			$('#DisplayDiv2').append(xmlHttp.responseText);
+    			//return xmlHttp.responseText;
+    			return false;
+			}
 		</script>
 		<script type="text/javascript">
 			function disconnectUser(access_token) {
@@ -48,7 +58,7 @@
   				$.ajax({
     				type: 'GET',
     				url: revokeUrl,
-    				async: false,
+    				async: true,
     				contentType: "application/json",
     				dataType: 'jsonp',
     				success: function(nullResponse) {

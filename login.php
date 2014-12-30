@@ -23,7 +23,6 @@
     				document.getElementById('signinButton').setAttribute('style', 'display: none');
     				document.getElementById('revokeButton').setAttribute('style', 'display: block');
     				//alert("ANGEMELDET!");
-    				document.getElementById('output').setAttribute('style', 'display: block');
     				loadQueryResults();
   				} else if (authResult['error']) {
     				// Es gab einen Fehler.
@@ -57,7 +56,6 @@
       					alert("ABGEMELDET!");
       					document.getElementById('signinButton').setAttribute('style', 'display: block');
     					document.getElementById('revokeButton').setAttribute('style', 'display: none');
-    					document.getElementById('output').setAttribute('style', 'display: none');
     				},
     				error: function(e) {
       					// Handhaben Sie den Fehler.
@@ -72,7 +70,6 @@
 			//$('.revokeButton').click(disconnectUser);
 		</script>
 		<button id="revokeButton" onclick="disconnectUser();" style="display: none">Abmelden</button>
-		<div id="output" style="display: none">waiting for action</div>
 		<script type="text/javascript">
       		(function() {
        			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;

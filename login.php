@@ -63,8 +63,8 @@
   				});
 			}
 			// Sie könnten die Trennung über den Klick auf eine Schaltfläche auslösen.
-			$('#revokeButton').click(disconnectUser);
+			//$('#revokeButton').click(disconnectUser);
 		</script>
-		<button id="revokeButton" >Abmelden</button>
+		<button id="revokeButton" onclick="disconnectUser();">Abmelden</button>
     </body>
 </html>

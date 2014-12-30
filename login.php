@@ -29,7 +29,7 @@
     			var el = document.getElementById('email');
     			var email = '';
 				document.getElementById('revokeButton').setAttribute('style', 'display: block');
-				loadQueryResults();
+				loadQueryResults(email);
     			if (obj['email']) {
       				email = 'Email: ' + obj['email'];
       				document.getElementById('email').setAttribute('style', 'display: block');
@@ -65,7 +65,7 @@
 
 		<div id="DisplayDiv"></div><br/>
     	<script type="text/javascript">
-			function loadQueryResults() {
+			function loadQueryResults(email) {
 				alert(email);
     			$('#DisplayDiv').load("login_handle.php?email=" + email);
     			return false;

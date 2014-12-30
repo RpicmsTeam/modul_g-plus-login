@@ -38,7 +38,6 @@
 
 
     			el.innerHTML = email;
-    			toggleElement('email');
   			}
 
   			function toggleElement(id) {

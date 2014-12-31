@@ -31,7 +31,7 @@ try {
     $cb->handleCallback($_GET);
 
     header("HTTP/1.1 302 Found");
-    header("Location: http://".$_SERVER['HOST_NAME'].$root."/index.php");
+    header("Location: http://".$_SERVER['SERVER_NAME'].$root."/index.php");
 } catch (AuthorizeException $e) {
     // this exception is thrown by Callback when the OAuth server returns a 
     // specific error message for the client, e.g.: the user did not authorize 

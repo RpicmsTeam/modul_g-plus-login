@@ -30,6 +30,7 @@ try {
     $tokenStorage = new fkooman\OAuth\Client\SessionStorage();
     $httpClient = new Guzzle\Http\Client();
     $cb = new fkooman\OAuth\Client\Callback("foo", $GoogleClientConfig, $tokenStorage, $httpClient);
+    var_dump($_GET)
     $cb->handleCallback($_GET);
     header("HTTP/1.1 302 Found");
     header("Location: http://".$_SERVER['SERVER_NAME'].$root."/index.php");

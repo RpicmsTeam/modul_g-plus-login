@@ -21,7 +21,7 @@ use fkooman\OAuth\Client\SessionStorage;
 use fkooman\OAuth\Client\Api;
 use fkooman\OAuth\Client\Context;
 use fkooman\Guzzle\Plugin\BearerAuth\BearerAuth;
-use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException
+use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
 use fkooman\OAuth\Client\Callback;
 
 // Google

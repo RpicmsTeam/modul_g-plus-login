@@ -16,6 +16,11 @@ if ($root_3[1] == 'core') {
 
 include($root.'/core/libs/OAuth2/vendor/autoload.php');
 
+use fkooman\OAuth\Common\Scope;
+use Guzzle\Http\Client;
+use Guzzle\Plugin\Mock\MockPlugin;
+use Guzzle\Http\Message\Response;
+
 // Google
 $googleClientConfig = new GoogleClientConfig(
     json_decode(file_get_contents("client_secrets.json"), true)

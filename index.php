@@ -25,7 +25,7 @@ use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
 
 // Google
 $googleClientConfig = new GoogleClientConfig(
-    json_decode(file_get_contents("client_secrets.json"), true)
+    json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true)
 );
 $api = new Api("foo", $googleClientConfig, new SessionStorage(), new \Guzzle\Http\Client());
 

@@ -17,7 +17,7 @@ if ($root_3[1] == 'core') {
 include($root.'/core/libs/OpenID/openid.php');
 $openid = new LightOpenID($_SERVER['SERVER_ADDR']);
 
-$openid->identity = 'https://accounts.google.com/o/oauth2/auth';
+$openid->identity = 'https://www.googleapis.com/plus/v1/people/me/openIdConnect';
 $openid->required = array(
   'namePerson/first',
   'namePerson/last',

@@ -19,4 +19,4 @@ include($root.'/core/libs/OAuth2/vendor/autoload.php')
 
 ?>
 
-<a href="<?php echo $openid->authUrl() ?>">Login with Google</a>
+<a href="">Login with Google</a>

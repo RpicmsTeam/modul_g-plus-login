@@ -20,6 +20,7 @@ use fkooman\OAuth\Client\GoogleClientConfig;
 use fkooman\OAuth\Client\Api;
 use fkooman\OAuth\Client\Context;
 use fkooman\Guzzle\Plugin\BearerAuth\BearerAuth;
+use fkooman\OAuth\Client\SessionStorage;
 
 
 // Google

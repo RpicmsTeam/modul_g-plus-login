@@ -21,6 +21,10 @@ use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
 use fkooman\OAuth\Client\Callback;
 use fkooman\OAuth\Client\SessionStorage;
 
+// Google
+$googleClientConfig = new GoogleClientConfig(
+    json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true)
+);
 
 try {
     $cb = new Callback("foo", $googleClientConfig, new SessionStorage(), new \Guzzle\Http\Client());

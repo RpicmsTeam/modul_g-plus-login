@@ -14,7 +14,7 @@ if ($root_3[1] == 'core') {
   $root = $root_1 . '/' . $root_3[1];
 }
 
-include($root.'/core/libs/OAuth2/vendor/autoload.php')
+include($root.'/core/libs/OAuth2/vendor/autoload.php');
 
 // Google
 $googleClientConfig = new GoogleClientConfig(

@@ -21,7 +21,8 @@ use fkooman\OAuth\Client\SessionStorage;
 use fkooman\OAuth\Client\Api;
 use fkooman\OAuth\Client\Context;
 use fkooman\Guzzle\Plugin\BearerAuth\BearerAuth;
-use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
+use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException
+use fkooman\OAuth\Client\Callback;
 
 // Google
 $googleClientConfig = new GoogleClientConfig(
@@ -31,6 +32,7 @@ $api = new Api("foo", $googleClientConfig, new SessionStorage(), new \Guzzle\Htt
 
 $context = new Context("mtrnord1@gmail.com", array("read"));
 
+$accessToken = $api->getAccessToken($context);
 if (false === $accessToken) {
     /* no valid access token available, go to authorization server */
     header("HTTP/1.1 302 Found");

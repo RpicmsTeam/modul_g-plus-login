@@ -16,8 +16,8 @@ if ($root_3[1] == 'core') {
 
 include($root.'/core/libs/OAuth2/vendor/autoload.php');
 
-use fkooman\php-oauth-client
-use fkooman\guzzle-bearer-auth-plugin
+use fkooman\php-oauth-client;
+use fkooman\guzzle-bearer-auth-plugin;
 use fkooman\OAuth\Common\Scope;
 use Guzzle\Http\Client;
 use Guzzle\Plugin\Mock\MockPlugin;

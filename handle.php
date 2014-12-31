@@ -16,18 +16,18 @@ if ($root_3[1] == 'core') {
 
 include($root.'/core/libs/OAuth2/vendor/autoload.php');
 
-
+use fkooman\OAuth\Client\GoogleClientConfig;
 use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
 use fkooman\OAuth\Client\Callback;
 use fkooman\OAuth\Client\SessionStorage;
 
 
 try {
-    $cb = new Callback("foo", $clientConfig, new SessionStorage(), new \Guzzle\Http\Client());
+    $cb = new Callback("foo", $googleClientConfig, new SessionStorage(), new \Guzzle\Http\Client());
     $cb->handleCallback($_GET);
 
     header("HTTP/1.1 302 Found");
-    header("Location: http://".$_SERVER['NAME']."/index.php");
+    header("Location: http://".$_SERVER['NAME'].$root."/index.php");
 } catch (AuthorizeException $e) {
     // this exception is thrown by Callback when the OAuth server returns a 
     // specific error message for the client, e.g.: the user did not authorize 

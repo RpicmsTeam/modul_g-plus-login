@@ -22,7 +22,7 @@ use fkooman\OAuth\Client\Callback;
 use fkooman\OAuth\Client\SessionStorage;
 
 // Google
-$googleClientConfig = new GoogleClientConfig(
+$GoogleClientConfig = new GoogleClientConfig(
     json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true)
 );
 

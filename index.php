@@ -17,13 +17,13 @@ if ($root_3[1] == 'core') {
 include($root.'/core/libs/OpenID/openid.php');
 $openid = new LightOpenID($_SERVER['SERVER_ADDR']);
 
-$openid->identity = 'https://www.googleapis.com/plus/v1/people/me/openIdConnect';
+$openid->identity = 'https://accounts.google.com/o/oauth2/auth';
 $openid->required = array(
   'namePerson/first',
   'namePerson/last',
   'contact/email',
 );
-$openid->returnUrl = 'http://'.$_SERVER['SERVER_ADDR'].'/login.php'
+$openid->returnUrl = 'http://'.$_SERVER['SERVER_ADDR'].$rrot.'/core/backend/admin/modules/modul_g-plus-login/login.php'
 ?>
 
 <a href="<?php echo $openid->authUrl() ?>">Login with Google</a>

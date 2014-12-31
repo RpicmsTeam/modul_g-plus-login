@@ -14,7 +14,7 @@ if ($root_3[1] == 'core') {
 }
 
 include($root.'/core/libs/OpenID/openid.php');
-$openid = new LightOpenID($_Server['SERVER_ADDR']);
+$openid = new LightOpenID($_SERVER['SERVER_ADDR']);
 
 if ($openid->mode) {
     if ($openid->mode == 'cancel') {

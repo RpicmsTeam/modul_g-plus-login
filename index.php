@@ -16,7 +16,7 @@ if ($root_3[1] == 'core') {
 
 include($root.'/core/libs/OAuth2/vendor/autoload.php');
 
-use fkooman\OAuth\Client\ClientConfig;
+use fkooman\OAuth\Client\GoogleClientConfig;
 use fkooman\OAuth\Client\SessionStorage;
 use fkooman\OAuth\Client\Api;
 use fkooman\OAuth\Client\Context;

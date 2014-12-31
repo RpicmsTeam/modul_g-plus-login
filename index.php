@@ -30,7 +30,7 @@ $googleClientConfig = new GoogleClientConfig(
 );
 $api = new Api("foo", $googleClientConfig, new SessionStorage(), new \Guzzle\Http\Client());
 
-$context = new Context("mtrnord1@gmail.com", array("read"));
+$context = new Context("mtrnord1@gmail.com", array("plus.login"));
 
 $accessToken = $api->getAccessToken($context);
 if (false === $accessToken) {

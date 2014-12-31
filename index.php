@@ -15,7 +15,7 @@ if ($root_3[1] == 'core') {
 }
 
 include($root.'/core/libs/OpenID/openid.php');
-$openid = new LightOpenID($_Server['SERVER_ADDR']);
+$openid = new LightOpenID($_SERVER['SERVER_ADDR']);
 
 $openid->identity = 'https://www.google.com/accounts/o8/id';
 $openid->required = array(
@@ -23,7 +23,7 @@ $openid->required = array(
   'namePerson/last',
   'contact/email',
 );
-$openid->returnUrl = 'http://'.$_Server['SERVER_ADDR'].'/login.php'
+$openid->returnUrl = 'http://'.$_SERVER['SERVER_ADDR'].'/login.php'
 ?>
 
 <a href="<?php echo $openid->authUrl() ?>">Login with Google</a>

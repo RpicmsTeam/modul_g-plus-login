@@ -13,9 +13,7 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
-echo "test";
 include($root.'/core/libs/OAuth2/vendor/autoload.php');
-echo "test2";
 use fkooman\OAuth\Client\GoogleClientConfig;
 use fkooman\OAuth\Client\SessionStorage;
 use fkooman\OAuth\Client\Api;
@@ -23,18 +21,14 @@ use fkooman\OAuth\Client\Context;
 use fkooman\Guzzle\Plugin\BearerAuth\BearerAuth;
 use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
 use fkooman\OAuth\Client\Callback;
-echo "test3";
 // Google
 $googleClientConfig = new GoogleClientConfig(
     json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true)
 );
 $api = new Api("foo", $googleClientConfig, new SessionStorage(), new \Guzzle\Http\Client());
-echo "test4";
 $context = new Context("mtrnord1@gmail.com", array("https://www.googleapis.com/auth/plus.login"));
-echo "test5";
 $accessToken = $api->getAccessToken($context);
 if (false === $accessToken) {
-    echo "test6";
     /* no valid access token available, go to authorization server */
     header("HTTP/1.1 302 Found");
     header("Location: " . $api->getAuthorizeUri($context));

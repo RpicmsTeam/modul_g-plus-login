@@ -32,7 +32,7 @@ try {
     $cb = new fkooman\OAuth\Client\Callback("foo", $GoogleClientConfig, $tokenStorage, $httpClient);
     $cb->handleCallback($_GET);
     header("HTTP/1.1 302 Found");
-    header("Location: http://".$_SERVER['SERVER_NAME'].$root."/index.php");
+    header("Location: http://rpi.nordgedanken.de/index.php");
     exit;
 } catch (fkooman\OAuth\Client\Exception\AuthorizeException $e) {
     // this exception is thrown by Callback when the OAuth server returns a

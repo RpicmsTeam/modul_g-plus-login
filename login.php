@@ -39,6 +39,9 @@ if (false === $accessToken) {
     header("HTTP/1.1 302 Found");
     header("Location: " . $api->getAuthorizeUri($context));
     exit;
+}else{
+    header("HTTP/1.1 302 Found");
+    header("Location: http://rpi.nordgedanken.de/cms_new/index.php");
 }
 
 

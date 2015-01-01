@@ -14,7 +14,7 @@ $context = new Context("mtrnord1@gmail.com", array("https://www.googleapis.com/a
 $accessToken = $api->getAccessToken($context);
 
 
-if(!isset($_COOKIE['PHPSESSID']) || $_COOKIE['PHPSESSID'] == $accessToken) {
+if(!isset($_COOKIE['PHPSESSID']) || !$_COOKIE['PHPSESSID'] == $accessToken) {
 	echo "<button onClick='self.location='../../core/backend/admin/modules/modul_g-plus-login/login.php''>Login with Google</button>";
 }else{
 	echo "<b style='color: white'>Logged in!</b>";

@@ -15,7 +15,7 @@ $accessToken = $api->getAccessToken($context);
 
 
 if(!isset($_COOKIE['PHPSESSID']) || !$_COOKIE['PHPSESSID'] == $accessToken) {
-	echo "<button onClick=\"self.location='../../core/backend/admin/modules/modul_g-plus-login/login.php'\" class=\"btn btn-danger\">Login with Google</button>";
+	echo "<button onClick=\"self.location='../../core/backend/admin/modules/modul_g-plus-login/login.php'\" class=\"btn-google-plus\">Login with Google</button>";
 }else{
 	echo "<b style='color: white'>Logged in!</b>";
 	echo "Value is: " . $_COOKIE['PHPSESSID'];

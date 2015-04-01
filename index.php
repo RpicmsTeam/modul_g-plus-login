@@ -9,7 +9,7 @@ use fkooman\OAuth\Client\SessionStorage;
 $googleClientConfig = new GoogleClientConfig(
     json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true)
 );
-#$api = new Api("foo", $googleClientConfig, new SessionStorage(), new \Guzzle\Http\Client());
+$api = new Api("foo", $googleClientConfig, new SessionStorage(), new \Guzzle\Http\Client());
 #$context = new Context("mtrnord1@gmail.com", array("https://www.googleapis.com/auth/plus.login"));
 #$accessToken = $api->getAccessToken($context);
 

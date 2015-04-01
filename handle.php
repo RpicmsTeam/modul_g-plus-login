@@ -14,12 +14,13 @@ if ($root_3[1] == 'core') {
   $root = $root_1 . '/' . $root_3[1];
 }
 
-include($root.'/core/libs/OAuth2/vendor/autoload.php');
-
 use fkooman\OAuth\Client\GoogleClientConfig;
-use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
 use fkooman\OAuth\Client\Callback;
 use fkooman\OAuth\Client\SessionStorage;
+use fkooman\OAuth\Client\PdoStorage;
+use Guzzle\Http\Client;
+use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
+include($root.'/core/libs/OAuth2/vendor/autoload.php');
 
 // Google
 $GoogleClientConfig = new GoogleClientConfig(
@@ -27,9 +28,9 @@ $GoogleClientConfig = new GoogleClientConfig(
 );
 
 try {
-    $tokenStorage = new fkooman\OAuth\Client\SessionStorage();
-    $httpClient = new Guzzle\Http\Client();
-    $cb = new fkooman\OAuth\Client\Callback("foo", $GoogleClientConfig, $tokenStorage, $httpClient);
+    $tokenStorage = new SessionStorage();
+    $httpClient = new Client();
+    $cb = new Callback("foo", $GoogleClientConfig, $tokenStorage, $httpClient);
     $cb->handleCallback($_GET);
     header("HTTP/1.1 302 Found");
     header("Location: http://rpi.nordgedanken.de/cms_new/index.php");

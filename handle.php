@@ -14,7 +14,7 @@ if ($root_3[1] == 'core') {
   $root = $root_1 . '/' . $root_3[1];
 }
 
-use fkooman\OAuth\Client\GoogleClientConfig;
+/*use fkooman\OAuth\Client\GoogleClientConfig;
 use fkooman\OAuth\Client\Callback;
 use fkooman\OAuth\Client\SessionStorage;
 use fkooman\OAuth\Client\PdoStorage;
@@ -43,5 +43,31 @@ try {
 } catch (Exception $e) {
     // other error, these should never occur in the normal flow
     die(sprintf("ERROR: %s", $e->getMessage()));
+}*/
+
+
+use fkooman\OAuth\Client\GoogleClientConfig;
+use fkooman\OAuth\Client\Callback;
+use fkooman\OAuth\Client\SessionStorage;
+use fkooman\OAuth\Client\PdoStorage;
+use Guzzle\Http\Client;
+require_once $root.'/core/libs/OAuth2/vendor/autoload.php';
+/* OAuth client configuration */
+$clientConfig = new GoogleClientConfig(json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true));
+try {
+    //$db = new PDO(sprintf("sqlite:%s/data/client.sqlite", __DIR__));
+    //$tokenStorage = new PdoStorage($db);
+    $tokenStorage = new SessionStorage();
+    /* initialize the Callback */
+    $cb = new Callback("foo", $clientConfig, $tokenStorage, new Client());
+    /* handle the callback */
+    $cb->handleCallback($_GET);
+    header("HTTP/1.1 302 Found");
+    header("Location: http://rpi.nordgedanken.de/cms_new/index.php");
+} catch (Exception $e) {
+    echo sprintf("ERROR: %s", $e->getMessage());
 }
+
+
+
 ?>

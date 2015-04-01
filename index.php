@@ -12,7 +12,6 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
-
 use fkooman\OAuth\Client\Api;
 use fkooman\OAuth\Client\Context;
 use fkooman\OAuth\Client\GoogleClientConfig;
@@ -23,9 +22,7 @@ use fkooman\Guzzle\Plugin\BearerAuth\BearerAuth;
 use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
 include($root.'/core/libs/OAuth2/vendor/autoload.php');
 
-$googleClientConfig = new GoogleClientConfig(
-    json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true)
-);
+$clientConfig = new GoogleClientConfig(json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true));
 $tokenStorage = new SessionStorage();
 $api = new Api("foo", $googleClientConfig, $tokenStorage, new Client());
 

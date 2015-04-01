@@ -18,8 +18,5 @@ if(!isset($_COOKIE['PHPSESSID']) || !$_COOKIE['PHPSESSID'] == $accessToken) {
 }else{
 	echo "<b style=\"color: white; text-align:center;\" class=\"btn btn-block btn-social btn-google-plus\"><i class=\"fa fa-google-plus\"></i>Logged in!</b>";
 }
-if (headers_sent()){
-  echo "lol";
-}
 
 ?>

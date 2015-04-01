@@ -24,7 +24,7 @@ include($root.'/core/libs/OAuth2/vendor/autoload.php');
 
 $clientConfig = new GoogleClientConfig(json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true));
 $tokenStorage = new SessionStorage();
-$api = new Api("foo", $googleClientConfig, $tokenStorage, new Client());
+$api = new Api("foo", $clientConfig, $tokenStorage, new Client());
 
 $context = new Context("mtrnord1@gmail.com", array("https://www.googleapis.com/auth/plus.login"));
 $accessToken = $api->getAccessToken($context);

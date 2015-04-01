@@ -5,7 +5,7 @@ use fkooman\OAuth\Client\Api;
 use fkooman\OAuth\Client\Context;
 use fkooman\OAuth\Client\GoogleClientConfig;
 use fkooman\OAuth\Client\SessionStorage;
-use GuzzleHttp\Client;
+use \GuzzleHttp\Client;
 
 
 $googleClientConfig = new GoogleClientConfig(

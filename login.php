@@ -23,12 +23,13 @@ use fkooman\OAuth\Client\Context;
 use fkooman\Guzzle\Plugin\BearerAuth\BearerAuth;
 use fkooman\Guzzle\Plugin\BearerAuth\Exception\BearerErrorResponseException;
 use fkooman\OAuth\Client\Callback;
+use \GuzzleHttp\Client;
 echo "test3";
 // Google
 $googleClientConfig = new GoogleClientConfig(
     json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true)
 );
-$api = new Api("foo", $googleClientConfig, new SessionStorage(), new \Guzzle\Http\Client());
+$api = new Api("foo", $googleClientConfig, new SessionStorage(), new Client());
 echo "test4";
 $context = new Context("mtrnord1@gmail.com", array("https://www.googleapis.com/auth/plus.login"));
 echo "test5";
@@ -45,7 +46,7 @@ if (false === $accessToken) {
 }
 
 try {
-    $client = new Guzzle\Http\Client();
+    $client = new Client();
     $bearerAuth = new fkooman\Guzzle\Plugin\BearerAuth\BearerAuth($accessToken->getAccessToken());
     $client->addSubscriber($bearerAuth);
     $response = $client->get($apiUri)->send();

@@ -6,6 +6,10 @@ use fkooman\OAuth\Client\Context;
 use fkooman\OAuth\Client\GoogleClientConfig;
 use fkooman\OAuth\Client\SessionStorage;
 
+if (headers_sent()){
+  echo "lol";
+}
+
 $googleClientConfig = new GoogleClientConfig(
     json_decode(file_get_contents($root.'/core/backend/admin/modules/modul_g-plus-login/client_secrets.json'), true)
 );
